@@ -21,6 +21,12 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('You have pushed the button this many times:'),
+            ElevatedButton(
+                onPressed: () {
+                  // İkinci sayfaya yönlendiriyoruz
+                  Get.toNamed('/second');
+                },
+                child: Text("Secondd Page'a Git")),
             // SayacController update() çağırdığında rebuild olur
             GetBuilder<SayacController>(
               builder: (c) => Text(
