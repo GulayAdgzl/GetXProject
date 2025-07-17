@@ -1,99 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx/sayac_controller.dart';
+import 'package:getx/home_page/home_page.dart';
+import 'package:getx/home_page/sayac_controller.dart';
+import 'package:getx/home_page/sayi_controller.dart';
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
+  // Controller'ları uygulama başlamadan önce kaydediyoruz.
+  Get.put(SayacController(), permanent: true);
+  Get.put(SayiController(), permanent: true);
+
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    final SayacController c = Get.put(SayacController());
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text("widget.title"),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text(
-                'You have pushed the button this many times:',
-              ),
-              GetBuilder(
-                init: SayacController(),
-                builder: (controller) => Text(
-                  controller.count.toString(),
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-              ),
-            ],
-          ),
-        ),
-        floatingActionButton:
-            RastgeleButton() // This trailing comma makes auto-formatting nicer for build methods.
-        );
-  }
-}
-
-class RastgeleButton extends StatelessWidget {
-  const RastgeleButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {
-        final SayacController c = Get.find();
-        c.increment();
-      },
-      tooltip: 'Increment',
-      child: const Icon(Icons.add),
-    );
-  }
-}
-
-class Simple extends StatelessWidget {
-  const Simple({
-    super.key,
-    required this.c,
-  });
-
-  final SayacController c;
-
-  @override
-  Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {
-        c.increment();
-      },
-      tooltip: 'Increment',
-      child: const Icon(Icons.add),
     );
   }
 }
