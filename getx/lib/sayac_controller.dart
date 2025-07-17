@@ -6,11 +6,6 @@ class SayacController extends GetxController {
 
   void increment() {
     count++;
-  }
-
-  void decrement() {
-    if (count > 0) {
-      count--;
-    }
+    update();
   }
 }

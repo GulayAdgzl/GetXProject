@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,6 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
+            ),
+            GetBuilder(
+              builder: (controller) => Text(
+                '0',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
             ),
           ],
         ),
