@@ -35,34 +35,65 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final SayacController c = Get.put(SayacController());
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("widget.title"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            GetBuilder(
-              init: SayacController(),
-              builder: (controller) => Text(
-                controller.count.toString(),
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-            ),
-          ],
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text("widget.title"),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          c.increment();
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                'You have pushed the button this many times:',
+              ),
+              GetBuilder(
+                init: SayacController(),
+                builder: (controller) => Text(
+                  controller.count.toString(),
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ),
+            ],
+          ),
+        ),
+        floatingActionButton:
+            RastgeleButton() // This trailing comma makes auto-formatting nicer for build methods.
+        );
+  }
+}
+
+class RastgeleButton extends StatelessWidget {
+  const RastgeleButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {
+        final SayacController c = Get.find();
+        c.increment();
+      },
+      tooltip: 'Increment',
+      child: const Icon(Icons.add),
+    );
+  }
+}
+
+class Simple extends StatelessWidget {
+  const Simple({
+    super.key,
+    required this.c,
+  });
+
+  final SayacController c;
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {
+        c.increment();
+      },
+      tooltip: 'Increment',
+      child: const Icon(Icons.add),
     );
   }
 }
