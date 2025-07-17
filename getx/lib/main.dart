@@ -5,6 +5,7 @@ import 'package:getx/home_page/home_binding.dart';
 import 'package:getx/home_page/home_page.dart';
 import 'package:getx/second/second_binding.dart';
 import 'package:getx/second/second_page.dart';
+import 'package:getx/splash/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       getPages: [
         GetPage(
+          name: '/splash',
+          page: () => const SplashPage(),
+        ),
+        GetPage(
             name: '/home',
             page: () => const MyHomePage(),
             binding: HomeBinding()),
@@ -26,7 +31,7 @@ class MyApp extends StatelessWidget {
             page: () => const SecondPage(),
             binding: SecondBinding()),
       ],
-      initialRoute: '/home',
+      initialRoute: '/splash',
       initialBinding: InitialBinding(),
       title: 'Flutter Demo',
       theme: ThemeData(
