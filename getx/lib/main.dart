@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/core/initial_binding.dart';
 import 'package:getx/home_page/home_binding.dart';
 import 'package:getx/home_page/home_page.dart';
 import 'package:getx/second/second_binding.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
             binding: SecondBinding()),
       ],
       initialRoute: '/home',
+      initialBinding: InitialBinding(),
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
