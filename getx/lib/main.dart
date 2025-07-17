@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: '/', page: () => const MyHomePage(), binding: HomeBinding()),
       ],
+      initialRoute: '/',
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
