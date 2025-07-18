@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/animations/animation_binding.dart';
+import 'package:getx/animations/animation_page.dart';
 import 'package:getx/core/initial_binding.dart';
 import 'package:getx/home_page/home_binding.dart';
 import 'package:getx/home_page/home_page.dart';
@@ -30,6 +32,10 @@ class MyApp extends StatelessWidget {
             name: '/second',
             page: () => const SecondPage(),
             binding: SecondBinding()),
+        GetPage(
+            name: '/animation',
+            page: () => const AnimationPage(),
+            binding: AnimationBinding()),
       ],
       initialRoute: '/splash',
       initialBinding: InitialBinding(),
