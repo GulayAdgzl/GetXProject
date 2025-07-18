@@ -27,6 +27,12 @@ class MyHomePage extends StatelessWidget {
                   Get.toNamed('/second');
                 },
                 child: Text("Secondd Page'a Git")),
+            ElevatedButton(
+                onPressed: () {
+                  // İkinci sayfaya yönlendiriyoruz
+                  Get.toNamed('/animation');
+                },
+                child: Text("Animation Page'a Git")),
             // SayacController update() çağırdığında rebuild olur
             GetBuilder<SayacController>(
               builder: (c) => Text(
