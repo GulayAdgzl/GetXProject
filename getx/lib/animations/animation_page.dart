@@ -17,7 +17,11 @@ class AnimationPage extends GetView<AnimationsController> {
                   duration: const Duration(milliseconds: 500),
                   width: controller.containerWidth.value,
                   height: controller.containerHeight.value,
-                  color: Colors.blue,
+                  decoration: BoxDecoration(
+                    color: controller.containerColor.value,
+                    borderRadius:
+                        BorderRadius.circular(controller.containerRadius.value),
+                  ),
                 )),
           ],
         ));
