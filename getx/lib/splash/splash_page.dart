@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx/splash/splash_controller.dart';
 import 'package:lottie/lottie.dart';
 
 class SplashPage extends StatelessWidget {
-  const SplashPage({super.key});
+  SplashPage({super.key});
+
+  final SplashController controller = Get.put(SplashController());
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Lottie.asset('assets/loading.json'),
+    return Scaffold(
+      body: Center(
+        child: Lottie.asset('assets/loading.json'),
+      ),
     );
   }
 }

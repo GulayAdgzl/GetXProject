@@ -23,6 +23,13 @@ class AnimationPage extends GetView<AnimationsController> {
                         BorderRadius.circular(controller.containerRadius.value),
                   ),
                 )),
+            SizedBox(height: 20),
+            Wrap(
+              children: [
+                ElevatedButton(
+                    onPressed: controller.boyutDegis, child: Text("Bout Değis"))
+              ],
+            )
           ],
         ));
   }

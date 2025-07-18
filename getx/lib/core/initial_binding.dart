@@ -10,7 +10,5 @@ class InitialBinding extends Bindings {
       await sharedPref.init();
       return sharedPref;
     });
-
-    Get.offAllNamed('/home');
   }
 }

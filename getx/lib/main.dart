@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: '/splash',
-          page: () => const SplashPage(),
+          page: () => SplashPage(),
         ),
         GetPage(
             name: '/home',
